@@ -1,0 +1,31 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import LibCrud from '../../../lib/LibCrud';
+import type { Post } from '../index.astro';
+
+//
+const { id } = Astro.params;
+console.log(id);
+let item: any = await LibCrud.get(Number(id));
+console.log(item);
+---
+<!-- -->
+<style>
+</style>
+
+<!-- MarkUp -->
+<Layout title="Welcome to Astro.">
+	<main>
+		<a href={`/crud`}>[ Back ]</a>
+		<hr />		
+		<h1>CrudShow</h1>
+		<p>Id:{id}</p>
+		<p>Name: {item.name}</p>
+		<hr />
+	
+	</main>
+</Layout>
+
+<!--
+	<p>Name: {post.name}</p>
+ -->
