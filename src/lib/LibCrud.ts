@@ -122,7 +122,39 @@ console.log(json.data);
       console.error(e);
     }
   },
-
+  /**
+   * update:
+   * @param key: any
+   *
+   * @return
+   */   
+  update : async function() : Promise<any>
+  {
+    try{
+      const elm: any = document.querySelector('#item_id');
+      const id = elm?.value;      
+      const name = document.querySelector<HTMLInputElement>('#name');
+      const item = {
+        name: name?.value,
+        content : '',
+        id: Number(id),
+      }
+//console.log(item);
+      const res = await fetch(LibConfig.API_URL + "/chats/update", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(item),
+      });      
+      const json = await res.json();
+      console.log(json);
+      if(json.ret !== 'OK'){
+        throw new Error('Error , update');
+      }
+      window.location.href = '/crud';	
+    } catch (e) {
+      console.error(e);
+    }
+  },
 }
 
 export default LibCrud;

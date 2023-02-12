@@ -26,6 +26,7 @@ console.log(items);
 			items.map((item) => (
 			  <li>
 				<a href={`/crud/show/${item.id}`}>{item.name}</a>
+				<a href={`/crud/edit/${item.id}`}>[edit]</a>
 			  </li>
 			))
 		  }
