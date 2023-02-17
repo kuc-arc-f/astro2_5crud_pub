@@ -1,9 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const PUBLIC_ANYBODY = import.meta.env.PUBLIC_ANYBODY;
+console.log("PUBLIC_ANYBODY=", PUBLIC_ANYBODY);
+
+const url = import.meta.env.PUBLIC_API_URL;
+console.log("url=", url);
+
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="container">
 		<a href={`/`}>[ Top ]</a>
 		<hr />		
 		<h1>Test</h1>

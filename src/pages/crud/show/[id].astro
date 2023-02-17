@@ -15,15 +15,15 @@ console.log(item);
 
 <!-- MarkUp -->
 <Layout title="Welcome to Astro.">
-	<main>
-		<a href={`/crud`}>[ Back ]</a>
+	<main class="container">
+		<a class="btn btn-outline-primary" href={`/crud`}>Back</a>
 		<hr />		
 		<h1>CrudShow</h1>
 		<p>Id:{id}</p>
 		<p>Name: {item.name}</p>
 		<hr />
 		<input type="hidden" value={id} id="item_id" />
-		<button id="btn_delete" class="btn btn-primary">[ Delete ]</button>
+		<button id="btn_delete" class="btn btn-danger">Delete</button>
 	
 	</main>
 </Layout>

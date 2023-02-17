@@ -13,13 +13,13 @@ console.log(items);
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<a href={`/`}>[ Top ]</a>
+	<main class="container">
+		<a class="btn btn-outline-primary" href={`/`}>Top</a>
 		<hr />		
 		<h1>Crud</h1>
 		<p class="instructions">CRUD, sample
 		</p>
-		<a href={`/crud/create`}>[ Create ]</a>
+		<a class="btn btn-primary" href={`/crud/create`}>Create</a>
 		<hr />
 		<ul>
 		  {
@@ -27,6 +27,7 @@ console.log(items);
 			  <li>
 				<a href={`/crud/show/${item.id}`}>{item.name}</a>
 				<a href={`/crud/edit/${item.id}`}>[edit]</a>
+				<hr />
 			  </li>
 			))
 		  }
